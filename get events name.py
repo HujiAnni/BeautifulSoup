@@ -5,4 +5,5 @@ html_berkeley=res.text
 soup=BeautifulSoup(html_berkeley,'html.parser')
 events_name=soup.find_all(class_='event-title')
 for item in events_name:
-    print(item.text)
+    link=item.find('a')
+    print(item.text,'\n'+'events.berkeley.edu/'+str(link['href']))
